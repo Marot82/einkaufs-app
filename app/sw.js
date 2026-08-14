@@ -2,7 +2,7 @@
 // Strategie "stale-while-revalidate": erst aus dem Cache antworten (schnell,
 // geht auch ohne Netz), im Hintergrund frische Version nachladen.
 
-const CACHE = 'eka-v5';
+const CACHE = 'eka-v6';
 
 const SHELL = [
   './',

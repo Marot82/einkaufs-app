@@ -49,13 +49,17 @@ Kreuzkümmel ganz (das Arbeitspferd – größere Packung)
 Kreuzkümmel gemahlen
 Koriander gemahlen
 Kurkuma
-Garam Masala (sparsam dosieren, enthält Pfeffer)
+Garam Masala (sparsam dosieren, enthält Pfeffer – oder pfefferfrei selbst mischen, siehe Notizen)
 Schwarze Senfkörner
 Paprikapulver süß (ersetzt Chilipulver)
 Zimt (1 Prise fürs Korma – ersetzt Kasuri Methi)
 Kardamom gemahlen (1 Prise fürs Korma – ersetzt Kasuri Methi)
 
 == VORTAG ==
+- Zwiebel-Knoblauch-Ingwer-Paste pürieren – sie wird gleich für Dal und Korma gebraucht, deshalb zuerst.
+  * 2 Zwiebeln schälen und grob würfeln, 4 Knoblauchzehen schälen.
+  * Ca. 3 cm Ingwer schälen (mit einem Teelöffel kratzen) und grob schneiden.
+  * Alles fein pürieren (Pürierstab oder Mixer). Wenn es nicht greift, 1–2 EL Wasser dazu. Ins geschlossene Glas – hält 2–3 Tage im Kühlschrank.
 - Dal komplett kochen – er wird über Nacht besser. Das Tadka erst am Tag selbst frisch machen.
   * 100 g rote Linsen dreimal in kaltem Wasser waschen, bis das Wasser klar bleibt.
   * Linsen mit 350 ml Wasser, 1/2 TL Kurkuma und 1/2 TL Salz aufsetzen, 20 min köcheln, bis sie völlig zerfallen. Schaum abschöpfen. (Timer: 20 min)
@@ -73,7 +77,6 @@ Kardamom gemahlen (1 Prise fürs Korma – ersetzt Kasuri Methi)
   * Karotten und Bohnen in Stücke schneiden.
   * 3 min blanchieren, kalt abschrecken, im Kühlschrank lagern. (Timer: 3 min)
   * Paprika roh in Würfel schneiden.
-- Zwiebel-Knoblauch-Ingwer-Paste pürieren (2 Zwiebeln, 4 Zehen, 3 cm Ingwer) – reicht für Dal, Korma und Aloo Gobi. Ins geschlossene Glas.
 - Gewürzschälchen vorportionieren: für jedes Gericht ein Schälchen mit abgemessenen Gewürzen. Beim Kochen bleibt keine Zeit zum Abmessen.
 - Minze zupfen, Koriander waschen, in feuchtem Küchenpapier in den Kühlschrank.
 - NICHT am Vortag: Raita/Kachumber schneiden, Kartoffeln/Blumenkohl schneiden, Naan-Teig ansetzen, Reis waschen.
@@ -118,6 +121,8 @@ Kardamom gemahlen (1 Prise fürs Korma – ersetzt Kasuri Methi)
   * Alles anrichten: Reis in die Mitte, Gerichte in Schälchen drumherum, großzügig Koriander. Guten Appetit!
 
 == NOTIZEN ==
+GARAM MASALA OHNE PFEFFER (selbst mischen): 1 TL Kreuzkümmel gem., 1 TL Koriander gem., 1/2 TL Zimt, 1/2 TL Kardamom gem., optional je 1 Prise Nelken/Muskat. Verrühren, luftdicht aufbewahren, 1:1 wie gekauftes verwenden. Wichtig fürs Korma: Die dort vorgesehene Extra-Prise Zimt + Kardamom dann weglassen oder halbieren, die steckt schon in der Mischung.
+
 DAL TADKA: Aufwärmen, mit Wasser flüssig einstellen. Tadka: 3 EL Öl richtig heiß, 1 TL ganzer Kreuzkümmel (muss aufplatzen), nach 20 Sek. 2 geschnittene Knoblauchzehen goldbraun, Pfanne vom Herd, 1/2 TL Paprikapulver nur in der Restwärme. Heiß über den Dal, nicht ganz unterrühren. Koriander drüber.
 
 NAVRATAN KORMA: 150 g Tofuwürfel in 2 EL Öl goldbraun. Sauce erwärmen, blanchiertes Gemüse + Paprika + 80 g Erbsen, 8 min köcheln. Tofu unterheben, eine Handvoll grob gehackte geröstete Cashews darüberstreuen (geben Biss, ohne süß zu sein). Je 1 Prise Zimt und Kardamom einrühren – das macht das Korma zum süß-warmen Gericht des Abends. Herd aus, erst dann 2 EL Joghurt einrühren (sonst flockt er).
