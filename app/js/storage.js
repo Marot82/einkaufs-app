@@ -40,12 +40,15 @@ export function saveRecipes(recipes) {
   save('recipes', recipes);
 }
 
-export function isSeeded() {
-  return load('seeded', false);
+// Version des eingebauten Beispielrezepts. Alte Speicher enthalten `true`
+// (aus der Zeit vor der Versionierung) – das zählt als Version 1.
+export function seededVersion() {
+  const v = load('seeded', 0);
+  return v === true ? 1 : v;
 }
 
-export function markSeeded() {
-  save('seeded', true);
+export function markSeeded(version) {
+  save('seeded', version);
 }
 
 // ---- Koch-Session (Stufe 3) ----

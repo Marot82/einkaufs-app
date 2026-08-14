@@ -1,7 +1,7 @@
 // Rezept-Bibliothek: Liste, Import mit Vorschau, Detailansicht,
 // "auf den Einkaufszettel", Portionsumrechnung, Export/Teilen.
 
-import { loadRecipes, saveRecipes, isSeeded, markSeeded, newId } from './storage.js';
+import { loadRecipes, saveRecipes, seededVersion, markSeeded, newId } from './storage.js';
 import { parseRecipeText, serializeRecipe } from './recipeParse.js';
 import { formatQty } from './parse.js';
 import { CATEGORIES, DEFAULT_CATEGORY } from './categories.js';
@@ -14,16 +14,29 @@ let currentId = null;      // gerade geöffnetes Rezept
 let currentServings = null; // gewählte Portionszahl in der Detailansicht
 let pendingRecipe = null;  // geparstes, noch nicht gespeichertes Rezept
 
-// ---- Erststart: Thali-Rezept einpflanzen ----
-if (!isSeeded()) {
+// ---- Eingebautes Beispielrezept (Thali) einpflanzen bzw. aktualisieren ----
+// Bei Erststart wird es angelegt; steigt SEED_VERSION, wird eine vorhandene
+// Kopie durch die neue Fassung ersetzt (gleiche id, damit z. B. erledigte
+// Vortags-Schritte erhalten bleiben). Hat der Nutzer das Rezept gelöscht,
+// bleibt es gelöscht.
+const SEED_VERSION = 2;
+if (seededVersion() < SEED_VERSION) {
   const { recipe } = parseRecipeText(SEED_RECIPE_TEXT);
   if (recipe) {
-    recipe.id = newId();
-    recipe.createdAt = Date.now();
-    recipes.push(recipe);
-    saveRecipes(recipes);
+    const idx = recipes.findIndex((r) => r.name === recipe.name);
+    if (idx >= 0) {
+      recipe.id = recipes[idx].id;
+      recipe.createdAt = recipes[idx].createdAt;
+      recipes[idx] = recipe;
+      saveRecipes(recipes);
+    } else if (seededVersion() === 0) {
+      recipe.id = newId();
+      recipe.createdAt = Date.now();
+      recipes.push(recipe);
+      saveRecipes(recipes);
+    }
   }
-  markSeeded();
+  markSeeded(SEED_VERSION);
 }
 
 // ---- DOM ----

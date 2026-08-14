@@ -1,6 +1,8 @@
-// Das erste Rezept, das beim allerersten Start automatisch in der Bibliothek
-// liegt: das indische Thali aus dem Projektordner, übersetzt ins App-Format.
-// Es läuft durch denselben Parser wie jedes eingefügte Rezept.
+// Das eingebaute Beispielrezept: das indische Thali aus dem Projektordner,
+// übersetzt ins App-Format. Es läuft durch denselben Parser wie jedes
+// eingefügte Rezept. Ändert sich der Text hier, muss in recipes.js die
+// SEED_VERSION erhöht werden, damit bestehende Installationen die neue
+// Fassung bekommen.
 
 export const SEED_RECIPE_TEXT = `=== REZEPT: Indisches Thali für zwei ===
 PORTIONEN: 2
@@ -41,7 +43,6 @@ Zucker
 1 Dose gehackte Tomaten (400 g – Reserve, falls die frischen mehlig sind)
 1 Päckchen Backpulver (nur als Notfallplan fürs Naan)
 1 Päckchen Natron (nur als Notfallplan fürs Naan)
-1 Packung Rosinen (optional, fürs Korma)
 
 [Gewürze]
 Kreuzkümmel ganz (das Arbeitspferd – größere Packung)
@@ -51,11 +52,8 @@ Kurkuma
 Garam Masala (sparsam dosieren, enthält Pfeffer)
 Schwarze Senfkörner
 Paprikapulver süß (ersetzt Chilipulver)
-Amchur (getrocknetes Mangopulver – macht das Aloo Gobi säuerlich)
-Kasuri Methi (getrocknete Bockshornkleeblätter – fürs Korma)
-Schwarzkümmel (optional, fürs Naan)
-Curryblätter getrocknet (optional, für den Reis)
-Asafoetida (optional, kleine Prise im Dal)
+Zimt (1 Prise fürs Korma – ersetzt Kasuri Methi)
+Kardamom gemahlen (1 Prise fürs Korma – ersetzt Kasuri Methi)
 
 == VORTAG ==
 - Dal komplett kochen – er wird über Nacht besser. Das Tadka erst am Tag selbst frisch machen. (Timer: 20 min)
@@ -81,11 +79,11 @@ Asafoetida (optional, kleine Prise im Dal)
 == NOTIZEN ==
 DAL TADKA: Aufwärmen, mit Wasser flüssig einstellen. Tadka: 3 EL Öl richtig heiß, 1 TL ganzer Kreuzkümmel (muss aufplatzen), nach 20 Sek. 2 geschnittene Knoblauchzehen goldbraun, Pfanne vom Herd, 1/2 TL Paprikapulver nur in der Restwärme. Heiß über den Dal, nicht ganz unterrühren. Koriander drüber.
 
-NAVRATAN KORMA: 150 g Tofuwürfel in 2 EL Öl goldbraun. Sauce erwärmen, blanchiertes Gemüse + Paprika + 80 g Erbsen, 8 min köcheln. Tofu und optional Rosinen unterheben. 1 TL Kasuri Methi zwischen den Händen zerreiben, einstreuen. Herd aus, erst dann 2 EL Joghurt einrühren (sonst flockt er).
+NAVRATAN KORMA: 150 g Tofuwürfel in 2 EL Öl goldbraun. Sauce erwärmen, blanchiertes Gemüse + Paprika + 80 g Erbsen, 8 min köcheln. Tofu unterheben, eine Handvoll grob gehackte geröstete Cashews darüberstreuen (geben Biss, ohne süß zu sein). Je 1 Prise Zimt und Kardamom einrühren – das macht das Korma zum süß-warmen Gericht des Abends. Herd aus, erst dann 2 EL Joghurt einrühren (sonst flockt er).
 
-ALOO GOBI: 3 EL Öl sehr heiß, 1 TL ganzer Kreuzkümmel. Kartoffelwürfel 8 min anbraten, Blumenkohl 5 min mit. 1/2 TL Kurkuma, 1 TL Koriander gem., 1/2 TL Kreuzkümmel gem., Salz. 1 gehackte Tomate, Deckel drauf, kleine Hitze 10–12 min. Kein Wasser! Zum Schluss 1/2 TL Garam Masala + 1/2 TL Amchur. Wenig rühren, damit es bräunt.
+ALOO GOBI: 3 EL Öl sehr heiß, 1 TL ganzer Kreuzkümmel. Kartoffelwürfel 8 min anbraten, Blumenkohl 5 min mit. 1/2 TL Kurkuma, 1 TL Koriander gem., 1/2 TL Kreuzkümmel gem., Salz. 1 gehackte Tomate, Deckel drauf, kleine Hitze 10–12 min. Kein Wasser! Zum Schluss 1/2 TL Garam Masala, dann Herd aus und erst jetzt 2 TL Zitronensaft unterheben (sonst verkocht die Säure – sie hebt das Gericht klar von Dal und Korma ab). Wenig rühren, damit es bräunt.
 
-ZITRONENREIS: Reis mit 210 ml Wasser + Salz aufkochen, Deckel, kleinste Hitze 11 min, dann 10 min ruhen (Deckel zu lassen!). Tempering: 3 EL Öl, 1 TL Senfkörner (müssen springen), dann 1 TL Kreuzkümmel, Curryblätter, Cashews. Herd aus, 1/2 TL Kurkuma, sofort über den Reis. Zitronensaft erst NACH dem Kochen.
+ZITRONENREIS: Reis mit 210 ml Wasser + Salz aufkochen, Deckel, kleinste Hitze 11 min, dann 10 min ruhen (Deckel zu lassen!). Tempering: 3 EL Öl, 1 TL Senfkörner (müssen springen), dann 1 TL Kreuzkümmel und 2 EL geröstete Cashews. Herd aus, 1/2 TL Kurkuma, sofort über den Reis. Zitronensaft erst NACH dem Kochen, nie mitkochen (macht die Körner hart).
 
 NAAN: Teig: 250 g Mehl, 3/4 TL Salz, Hefe-Zucker-Wasser (60 ml), 120 g Joghurt, 2 EL Öl. 8 min kneten, weich und klebrig. 1,5 h gehen. 5 mm dick ausrollen, nicht dünner. Gusseisenpfanne ohne Öl maximal vorheizen. 1,5 min mit Deckel, wenden, 1 min offen. Mit Knoblauchöl bestreichen, im Tuch stapeln. Nur 2–3 backen, Rest-Teig hält 2 Tage im Kühlschrank.
 
