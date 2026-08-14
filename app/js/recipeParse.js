@@ -171,25 +171,28 @@ function parseAppFormat(text, titleMatch) {
     warnings.push('Keine Zutaten-Sektion gefunden.');
   }
 
-  // VORTAG
-  if (sections.VORTAG) {
-    for (const line of sections.VORTAG.split('\n')) {
+  // VORTAG und SCHRITTE: "- " beginnt einen Schritt, eingerückte "* "-Zeilen
+  // sind Unterschritte des Schritts darüber (die Kochansicht führt einzeln
+  // durch sie hindurch).
+  function parseStepSection(sectionText, target, keepOffset) {
+    for (const line of sectionText.split('\n')) {
       const t = line.trim();
       if (!t || t.startsWith('#')) continue;
+      if (t.startsWith('*')) {
+        const sub = parseStepLine(t);
+        const parent = target[target.length - 1];
+        if (sub && parent) parent.substeps.push({ text: sub.text, timerMin: sub.timerMin });
+        continue;
+      }
       const step = parseStepLine(t);
-      if (step) recipe.prepSteps.push({ text: step.text, timerMin: step.timerMin });
+      if (!step) continue;
+      if (keepOffset) target.push({ ...step, substeps: [] });
+      else target.push({ text: step.text, timerMin: step.timerMin, substeps: [] });
     }
   }
 
-  // SCHRITTE
-  if (sections.SCHRITTE) {
-    for (const line of sections.SCHRITTE.split('\n')) {
-      const t = line.trim();
-      if (!t || t.startsWith('#')) continue;
-      const step = parseStepLine(t);
-      if (step) recipe.steps.push(step);
-    }
-  }
+  if (sections.VORTAG) parseStepSection(sections.VORTAG, recipe.prepSteps, false);
+  if (sections.SCHRITTE) parseStepSection(sections.SCHRITTE, recipe.steps, true);
 
   // NOTIZEN
   if (sections.NOTIZEN) recipe.notes = sections.NOTIZEN;
@@ -247,7 +250,7 @@ function parseFreeform(text) {
       }
     } else if (mode === 'steps') {
       const step = parseStepLine(t);
-      if (step) recipe.steps.push(step);
+      if (step) recipe.steps.push({ ...step, substeps: [] });
     }
   }
 
@@ -283,9 +286,18 @@ export function serializeRecipe(recipe) {
   }
   lines.push('');
 
+  function pushSubsteps(step) {
+    for (const sub of step.substeps || []) {
+      lines.push(`  * ${sub.text}`);
+    }
+  }
+
   if (recipe.prepSteps.length > 0) {
     lines.push('== VORTAG ==');
-    for (const s of recipe.prepSteps) lines.push(`- ${s.text}`);
+    for (const s of recipe.prepSteps) {
+      lines.push(`- ${s.text}`);
+      pushSubsteps(s);
+    }
     lines.push('');
   }
 
@@ -295,6 +307,7 @@ export function serializeRecipe(recipe) {
       const prefix = s.offsetMin != null ? `T-${s.offsetMin}: ` : '';
       const flex = s.flexible ? ' (vorziehbar)' : '';
       lines.push(`- ${prefix}${s.text}${flex}`);
+      pushSubsteps(s);
     }
     lines.push('');
   }

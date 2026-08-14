@@ -56,25 +56,66 @@ Zimt (1 Prise fürs Korma – ersetzt Kasuri Methi)
 Kardamom gemahlen (1 Prise fürs Korma – ersetzt Kasuri Methi)
 
 == VORTAG ==
-- Dal komplett kochen – er wird über Nacht besser. Das Tadka erst am Tag selbst frisch machen. (Timer: 20 min)
-- Korma-Sauce fertigstellen: Cashews 30 min einweichen, fein pürieren, Sauce kochen. Am Tag selbst kommt nur noch das Gemüse rein.
+- Dal komplett kochen – er wird über Nacht besser. Das Tadka erst am Tag selbst frisch machen.
+  * 100 g rote Linsen dreimal in kaltem Wasser waschen, bis das Wasser klar bleibt.
+  * Linsen mit 350 ml Wasser, 1/2 TL Kurkuma und 1/2 TL Salz aufsetzen, 20 min köcheln, bis sie völlig zerfallen. Schaum abschöpfen. (Timer: 20 min)
+  * In einer zweiten Pfanne 2 EL Öl erhitzen, 3 EL Zwiebel-Knoblauch-Ingwer-Paste 5–7 min goldbraun braten – nicht hetzen, das ist der Geschmacksträger.
+  * 2 gehackte Tomaten, 1 TL Koriander gemahlen, 1/2 TL Kreuzkümmel gemahlen und 1/2 TL Paprikapulver dazu. Kochen, bis sich das Öl am Rand absetzt.
+  * Alles zu den Linsen geben, 5 min ziehen lassen. Konsistenz wie dicke Suppe – mit Wasser einstellen. Abkühlen, Kühlschrank.
+- Korma-Sauce fertigstellen. Am Tag selbst kommt nur noch das Gemüse rein.
+  * 80 g Cashews 30 min in heißem Wasser einweichen, dann mit 100 ml frischem Wasser sehr fein pürieren – die Paste muss glatt sein. (Timer: 30 min)
+  * 3 EL Öl erhitzen, 4 EL Zwiebel-Knoblauch-Ingwer-Paste goldbraun braten.
+  * 1 TL Koriander gemahlen, 1/2 TL Kurkuma, 1/2 TL Kreuzkümmel gemahlen und 1/2 TL Garam Masala kurz mitrösten.
+  * 1 gehackte Tomate dazu, weichkochen.
+  * Cashewpaste und 200 ml Wasser einrühren, 10 min leise köcheln. Mit 1 TL Zucker und Salz abschmecken. Abkühlen, Kühlschrank. (Timer: 10 min)
 - Cashews für den Reis in trockener Pfanne goldbraun rösten, auskühlen lassen, luftdicht aufbewahren.
-- Korma-Gemüse vorbereiten: Karotten und Bohnen schneiden, 3 min blanchieren, kalt abschrecken, kühl lagern. Paprika roh schneiden.
+- Korma-Gemüse vorbereiten.
+  * Karotten und Bohnen in Stücke schneiden.
+  * 3 min blanchieren, kalt abschrecken, im Kühlschrank lagern. (Timer: 3 min)
+  * Paprika roh in Würfel schneiden.
 - Zwiebel-Knoblauch-Ingwer-Paste pürieren (2 Zwiebeln, 4 Zehen, 3 cm Ingwer) – reicht für Dal, Korma und Aloo Gobi. Ins geschlossene Glas.
-- Gewürzschälchen vorportionieren: für jedes Gericht ein Schälchen mit abgemessenen Gewürzen.
+- Gewürzschälchen vorportionieren: für jedes Gericht ein Schälchen mit abgemessenen Gewürzen. Beim Kochen bleibt keine Zeit zum Abmessen.
 - Minze zupfen, Koriander waschen, in feuchtem Küchenpapier in den Kühlschrank.
 - NICHT am Vortag: Raita/Kachumber schneiden, Kartoffeln/Blumenkohl schneiden, Naan-Teig ansetzen, Reis waschen.
 
 == SCHRITTE ==
-- T-240: Naan-Teig ansetzen und abgedeckt gehen lassen. (Timer: 90 min)
-- T-150: Kartoffeln und Blumenkohl schneiden, Kartoffeln in kaltes Wasser legen. (vorziehbar)
+- T-240: Naan-Teig ansetzen und abgedeckt gehen lassen.
+  * 1 TL Trockenhefe und 1 TL Zucker in 60 ml lauwarmem Wasser auflösen, 10 min schäumen lassen. (Timer: 10 min)
+  * 250 g Mehl Typ 550 und 3/4 TL Salz mischen. 120 g veganen Joghurt, 2 EL Öl und die Hefemischung dazu.
+  * 8 min kräftig kneten – der Teig soll weicher und klebriger sein als Pizzateig. Löffelweise Wasser nachgeben, wenn er zu fest wirkt.
+  * Abgedeckt 1,5 Std gehen lassen, bis er sich verdoppelt hat. (Timer: 90 min)
+- T-150: Kartoffeln und Blumenkohl schneiden. (vorziehbar)
+  * 250 g Kartoffeln schälen, in 2-cm-Würfel schneiden, in kaltes Wasser legen.
+  * 250 g Blumenkohl in kleine Röschen teilen.
 - T-135: Naan-Teig in 4 Portionen teilen, rund schleifen, abgedeckt ruhen lassen.
-- T-90: Korma fertigstellen: Tofu anbraten, Gemüse in die Sauce, Tofu unterheben, warm halten.
+- T-90: Korma fertigstellen und warm halten.
+  * 150 g Tofu trockentupfen, würfeln, in 2 EL Öl von allen Seiten goldbraun braten. Beiseite stellen.
+  * Sauce erwärmen. Blanchierte Karotten und Bohnen, rohe Paprikawürfel und 80 g Erbsen dazu, 8 min köcheln. (Timer: 8 min)
+  * Tofu unterheben, eine Handvoll grob gehackte geröstete Cashews darüberstreuen.
+  * Je 1 Prise Zimt und Kardamom einrühren – das macht das Korma süß-warm.
+  * Herd aus, erst dann 2 EL Joghurt einrühren (sonst flockt er). Warm halten.
 - T-60: Aloo Gobi kochen.
+  * 3 EL Öl in der größten Pfanne richtig heiß werden lassen. 1 TL ganzen Kreuzkümmel hinein, aufplatzen lassen.
+  * Kartoffelwürfel (abgetropft) 8 min anbraten, bis sie Farbe haben – wenig rühren, damit sie bräunen. (Timer: 8 min)
+  * Blumenkohl dazu, 5 min mitbraten. (Timer: 5 min)
+  * 1/2 TL Kurkuma, 1 TL Koriander gemahlen, 1/2 TL Kreuzkümmel gemahlen und Salz dazu, gut durchschwenken.
+  * 1 gehackte Tomate dazu, Deckel drauf, Hitze runter, 10–12 min garen. Kein Wasser – die Tomate reicht. (Timer: 11 min)
+  * Deckel ab, 1/2 TL Garam Masala einstreuen. Herd aus, 2 TL Zitronensaft unterheben, frischen Koriander drüber.
 - T-40: Reis waschen und einweichen. (Timer: 30 min)
-- T-30: Raita und Kachumber schneiden und anmachen.
-- T-15: Reis kochen: aufkochen, Deckel drauf, kleinste Hitze. (Timer: 11 min)
-- T-0: Dal aufwärmen, Tadka frisch drübergießen. Naan backen, alles auf den Tisch.
+- T-30: Raita anmachen, Kachumber vorschneiden.
+  * Raita: 1/2 Gurke grob raspeln, salzen, 10 min stehen lassen, dann kräftig ausdrücken. (Timer: 10 min)
+  * Gurke in 200 g glattgerührten Joghurt geben. 1/2 TL Kreuzkümmel trocken rösten, grob zerstoßen, einrühren. Minze, Salz, Spritzer Zitrone. Kalt stellen.
+  * Kachumber: 1 Tomate, 1/2 Gurke und 1/2 rote Zwiebel in kleine, gleichmäßige Würfel schneiden. Noch NICHT anmachen.
+- T-15: Reis kochen.
+  * Reis abgießen, mit 210 ml Wasser und Salz aufkochen. Deckel drauf, kleinste Hitze, 11 min. (Timer: 11 min)
+  * Herd aus, 10 min mit Deckel ruhen lassen – nicht zwischendurch aufmachen. (Timer: 10 min)
+- T-0: Endspurt – Dal, Reis-Tempering, Kachumber, Naan.
+  * Dal aufwärmen, mit Wasser wieder flüssig einstellen.
+  * Tadka: 3 EL Öl richtig heiß. 1 TL ganzen Kreuzkümmel hinein (muss sofort aufplatzen), nach 20 Sek 2 fein geschnittene Knoblauchzehen goldbraun braten. Pfanne vom Herd, 1/2 TL Paprikapulver nur in der Restwärme einrühren. Heiß über den Dal gießen, nicht ganz unterrühren.
+  * Kachumber mit Limettensaft, Salz und Koriander anmachen.
+  * Reis-Tempering: 3 EL Öl, 1 TL Senfkörner (müssen springen), dann 1 TL Kreuzkümmel und 2 EL geröstete Cashews. Herd aus, 1/2 TL Kurkuma, sofort über den Reis. Saft von 1 Zitrone unterheben.
+  * Naan: Fladen 5 mm dick ausrollen, nicht dünner. Gusseisenpfanne ohne Öl maximal vorheizen. 1,5 min mit Deckel, wenden, 1 min offen. Mit Knoblauchöl bestreichen, im Tuch stapeln. Nur 2–3 backen.
+  * Alles anrichten: Reis in die Mitte, Gerichte in Schälchen drumherum, großzügig Koriander. Guten Appetit!
 
 == NOTIZEN ==
 DAL TADKA: Aufwärmen, mit Wasser flüssig einstellen. Tadka: 3 EL Öl richtig heiß, 1 TL ganzer Kreuzkümmel (muss aufplatzen), nach 20 Sek. 2 geschnittene Knoblauchzehen goldbraun, Pfanne vom Herd, 1/2 TL Paprikapulver nur in der Restwärme. Heiß über den Dal, nicht ganz unterrühren. Koriander drüber.

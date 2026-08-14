@@ -716,6 +716,67 @@ dialog h2 { font-size: 1.15rem; margin-bottom: 16px; }
 .done-title { color: var(--text-dim); }
 .cooking-done-list { opacity: 0.75; }
 
+/* Aufklappbare Schritte mit Unterschritten */
+.cooking-step-wrap { border-bottom: 1px solid var(--border); }
+.cooking-step-wrap:last-child { border-bottom: none; }
+.cooking-step-wrap .item { border-bottom: none; }
+.cooking-step-wrap.step-open { background: var(--surface); }
+.cooking-step-wrap.step-open .cooking-step { background: var(--surface-2); }
+
+.step-chevron {
+  flex: none;
+  align-self: center;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  padding-left: 2px;
+}
+
+.cooking-step-body {
+  padding: 4px 14px 14px 14px;
+}
+
+.cooking-substep {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.cooking-substep:active { background: var(--surface-2); }
+
+.substep-check {
+  width: 22px;
+  height: 22px;
+  font-size: 0.8rem;
+  margin-top: 1px;
+}
+.cooking-substep.checked .substep-check {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.substep-text {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+.cooking-substep.checked .substep-text {
+  text-decoration: line-through;
+  color: var(--text-dim);
+}
+
+.substep-next {
+  background: var(--accent-soft);
+}
+.substep-next .substep-text { font-weight: 600; }
+
+.btn-step-done { margin-top: 6px; }
+
 .cooking-notes { margin-top: 24px; }
 .cooking-notes summary {
   cursor: pointer;

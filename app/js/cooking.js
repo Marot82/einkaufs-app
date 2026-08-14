@@ -17,6 +17,11 @@ import {
 } from './storage.js';
 
 let session = loadCookingSession();
+// Ältere Sessions kennen die Felder für Unterschritte noch nicht.
+if (session) {
+  session.subDone = session.subDone || {};
+  session.openStep = session.openStep || null;
+}
 let tickHandle = null;
 let lastRenderMinute = null;
 let wakeLock = null;
@@ -245,6 +250,8 @@ function startSession(mode) {
     mode,
     mealTime: mode === 'timed' ? mealTimeFromInput() : null,
     done,
+    subDone: {},
+    openStep: null,
     timers: [],
     startedAt: Date.now(),
   };
@@ -285,6 +292,7 @@ function toggleStep(key) {
   if (!session) return;
   if (session.done[key]) delete session.done[key];
   else session.done[key] = Date.now();
+  if (session.openStep === key) session.openStep = null;
 
   // Vortags-Schritte zusätzlich dauerhaft merken
   if (key.startsWith('p')) {
@@ -294,6 +302,31 @@ function toggleStep(key) {
     savePrepDone(session.recipeId, prepDone);
   }
 
+  saveCookingSession(session);
+  renderActive();
+}
+
+// Schritt auf- oder zuklappen (immer nur einer offen)
+function toggleOpen(key) {
+  if (!session) return;
+  session.openStep = session.openStep === key ? null : key;
+  saveCookingSession(session);
+  renderActive();
+}
+
+// Unterschritt abhaken; sind danach alle durch, ist der ganze Schritt erledigt.
+function toggleSubstep(key, idx, substepCount) {
+  if (!session) return;
+  const sub = session.subDone[key] || {};
+  if (sub[idx]) delete sub[idx];
+  else sub[idx] = Date.now();
+  session.subDone[key] = sub;
+
+  const doneCount = Object.keys(sub).length;
+  if (doneCount >= substepCount) {
+    toggleStep(key); // speichert und rendert selbst
+    return;
+  }
   saveCookingSession(session);
   renderActive();
 }
@@ -601,15 +634,40 @@ function renderActive() {
   }
 }
 
+function makeTimerBtn(key, text, min) {
+  const timerBtn = document.createElement('button');
+  timerBtn.className = 'timer-btn';
+  timerBtn.textContent = `⏱ ${min} min`;
+  timerBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const label = displayText(text);
+    startTimer(key, label.length > 40 ? label.slice(0, 40) + '…' : label, min);
+  });
+  return timerBtn;
+}
+
 function renderStepRow(entry) {
   const isDone = entry.status === 'done';
+  const substeps = entry.step.substeps || [];
+  const isOpen = !isDone && session.openStep === entry.key;
+  const subDone = session.subDone[entry.key] || {};
+  const subDoneCount = substeps.filter((_, i) => subDone[i]).length;
+
+  const wrap = document.createElement('div');
+  wrap.className = 'cooking-step-wrap' + (isOpen ? ' step-open' : '');
+
   const row = document.createElement('div');
   row.className = 'item cooking-step' + (isDone ? ' checked' : '');
   if (entry.status === 'due') row.classList.add('step-due');
 
+  // Kreis: direktes Abhaken (bei Erledigten: zurücknehmen)
   const check = document.createElement('div');
   check.className = 'item-check';
   check.textContent = '✓';
+  check.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleStep(entry.key);
+  });
   row.appendChild(check);
 
   const text = document.createElement('div');
@@ -639,6 +697,13 @@ function renderStepRow(entry) {
     badges.appendChild(badge);
     hasBadge = true;
   }
+  if (substeps.length > 0 && subDoneCount > 0 && !isDone) {
+    const badge = document.createElement('span');
+    badge.className = 'step-time';
+    badge.textContent = `${subDoneCount}/${substeps.length}`;
+    badges.appendChild(badge);
+    hasBadge = true;
+  }
   if (hasBadge) text.appendChild(badges);
 
   const nameEl = document.createElement('div');
@@ -647,21 +712,70 @@ function renderStepRow(entry) {
   text.appendChild(nameEl);
   row.appendChild(text);
 
-  // Timer-Knopf
   if (entry.step.timerMin && !isDone) {
-    const timerBtn = document.createElement('button');
-    timerBtn.className = 'timer-btn';
-    timerBtn.textContent = `⏱ ${entry.step.timerMin} min`;
-    timerBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const label = displayText(entry.step.text);
-      startTimer(entry.key, label.length > 40 ? label.slice(0, 40) + '…' : label, entry.step.timerMin);
-    });
-    row.appendChild(timerBtn);
+    row.appendChild(makeTimerBtn(entry.key, entry.step.text, entry.step.timerMin));
   }
 
-  row.addEventListener('click', () => toggleStep(entry.key));
-  return row;
+  // Aufklapp-Pfeil (nur bei offenen Schritten)
+  if (!isDone) {
+    const chevron = document.createElement('span');
+    chevron.className = 'step-chevron';
+    chevron.textContent = isOpen ? '▾' : '▸';
+    row.appendChild(chevron);
+  }
+
+  // Tippen auf die Karte: aufklappen statt abhaken; Erledigte: zurücknehmen
+  row.addEventListener('click', () => {
+    if (isDone) toggleStep(entry.key);
+    else toggleOpen(entry.key);
+  });
+  wrap.appendChild(row);
+
+  // Aufgeklappter Bereich: Unterschritte einzeln durchgehen
+  if (isOpen) {
+    const body = document.createElement('div');
+    body.className = 'cooking-step-body';
+
+    if (substeps.length > 0) {
+      let nextFound = false;
+      substeps.forEach((sub, i) => {
+        const done = !!subDone[i];
+        const subRow = document.createElement('div');
+        subRow.className = 'cooking-substep' + (done ? ' checked' : '');
+        if (!done && !nextFound) {
+          subRow.classList.add('substep-next');
+          nextFound = true;
+        }
+
+        const subCheck = document.createElement('div');
+        subCheck.className = 'item-check substep-check';
+        subCheck.textContent = '✓';
+        subRow.appendChild(subCheck);
+
+        const subText = document.createElement('div');
+        subText.className = 'substep-text';
+        subText.textContent = displayText(sub.text);
+        subRow.appendChild(subText);
+
+        if (sub.timerMin && !done) {
+          subRow.appendChild(makeTimerBtn(`${entry.key}.${i}`, sub.text, sub.timerMin));
+        }
+
+        subRow.addEventListener('click', () => toggleSubstep(entry.key, i, substeps.length));
+        body.appendChild(subRow);
+      });
+    } else {
+      const doneBtn = document.createElement('button');
+      doneBtn.className = 'btn-primary btn-block btn-step-done';
+      doneBtn.textContent = '✓ Schritt erledigt';
+      doneBtn.addEventListener('click', () => toggleStep(entry.key));
+      body.appendChild(doneBtn);
+    }
+
+    wrap.appendChild(body);
+  }
+
+  return wrap;
 }
 
 // ---- Tick: Zeiten und Timer aktuell halten ----
