@@ -1,0 +1,6 @@
+# Nur die App selbst wird veröffentlicht – Planungs- und Rezeptdateien bleiben privat.
+*
+!.gitignore
+!index.html
+!app/
+!app/**

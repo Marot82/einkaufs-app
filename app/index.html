@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2e7d46" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a2e20" media="(prefers-color-scheme: dark)">
+  <title>Einkauf &amp; Kochen</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Ansicht: Einkaufszettel ===== -->
+  <main id="view-shopping" class="view active">
+    <header class="app-header">
+      <h1>Einkaufszettel</h1>
+      <button id="btn-clear-bought" class="header-btn" title="Gekauftes entfernen">Aufräumen</button>
+    </header>
+
+    <div class="add-bar">
+      <form id="add-form" autocomplete="off">
+        <input type="text" id="add-input" placeholder="z. B. 350 g Kartoffeln" enterkeyhint="done" autocapitalize="sentences">
+        <button type="submit" id="add-btn" aria-label="Hinzufügen">+</button>
+      </form>
+      <div id="suggestions" class="suggestions hidden"></div>
+    </div>
+
+    <div id="shopping-list" class="list-area">
+      <!-- Kategorien-Gruppen werden per JS eingefügt -->
+    </div>
+
+    <div id="bought-area" class="bought-area hidden">
+      <button id="bought-toggle" class="bought-toggle">
+        <span id="bought-label">Im Wagen (0)</span>
+        <span id="bought-chevron" class="chevron">▾</span>
+      </button>
+      <div id="bought-list" class="bought-list"></div>
+    </div>
+
+    <p id="empty-hint" class="empty-hint hidden">
+      Dein Zettel ist leer.<br>Tippe oben etwas ein, z.&nbsp;B. „2 Zitronen“.
+    </p>
+  </main>
+
+  <!-- ===== Ansicht: Rezepte ===== -->
+  <main id="view-recipes" class="view">
+
+    <!-- Unteransicht: Bibliothek -->
+    <section id="recipes-home">
+      <header class="app-header">
+        <h1>Rezepte</h1>
+        <button id="btn-recipe-import" class="header-btn">+ Einfügen</button>
+      </header>
+      <div id="recipe-list" class="recipe-list"></div>
+      <p id="recipes-empty" class="empty-hint hidden">
+        Noch keine Rezepte.<br>Tippe oben auf „+ Einfügen“ und füge ein Rezept ein.
+      </p>
+    </section>
+
+    <!-- Unteransicht: Import -->
+    <section id="recipe-import" class="hidden">
+      <header class="app-header">
+        <button class="header-btn btn-back" data-back="recipes-home">‹ Zurück</button>
+        <h1>Rezept einfügen</h1>
+      </header>
+      <div class="import-area">
+        <textarea id="import-text" placeholder="Rezept hier einfügen …&#10;&#10;Am besten im App-Format (sag Claude: „gib mir das Rezept im App-Format“). Normaler Rezepttext funktioniert oft auch – die Vorschau zeigt dir, was ich verstanden habe."></textarea>
+        <button id="btn-import-parse" class="btn-primary btn-block">Einlesen</button>
+        <div id="import-preview" class="import-preview hidden"></div>
+      </div>
+    </section>
+
+    <!-- Unteransicht: Rezept-Detail -->
+    <section id="recipe-detail" class="hidden">
+      <header class="app-header">
+        <button class="header-btn btn-back" data-back="recipes-home">‹ Zurück</button>
+        <button id="btn-recipe-delete" class="header-btn btn-header-danger">Löschen</button>
+      </header>
+      <div id="recipe-detail-content" class="detail-content"></div>
+    </section>
+
+  </main>
+
+  <!-- ===== Ansicht: Kochen (Stufe 3) ===== -->
+  <main id="view-cooking" class="view">
+    <header class="app-header">
+      <h1>Kochen</h1>
+    </header>
+    <div class="placeholder-card">
+      <div class="placeholder-emoji">👨‍🍳</div>
+      <h2>Kommt in Stufe 3</h2>
+      <p>Hier führt dich die App Schritt für Schritt durchs Kochen – mit Zeitplan
+      rückwärts gerechnet von der Essenszeit, Timern und Vortags-Schritten.</p>
+    </div>
+  </main>
+
+  <!-- ===== Untere Navigation ===== -->
+  <nav class="bottom-nav">
+    <button class="nav-btn active" data-view="view-shopping">
+      <span class="nav-icon">🛒</span><span class="nav-label">Zettel</span>
+      <span id="badge-shopping" class="nav-badge hidden">0</span>
+    </button>
+    <button class="nav-btn" data-view="view-recipes">
+      <span class="nav-icon">📖</span><span class="nav-label">Rezepte</span>
+    </button>
+    <button class="nav-btn" data-view="view-cooking">
+      <span class="nav-icon">👨‍🍳</span><span class="nav-label">Kochen</span>
+    </button>
+  </nav>
+
+  <!-- ===== Dialog: Eintrag bearbeiten ===== -->
+  <dialog id="edit-dialog">
+    <form method="dialog" id="edit-form">
+      <h2>Eintrag bearbeiten</h2>
+      <div class="field-row">
+        <label class="field qty-field">
+          <span>Menge</span>
+          <input type="text" id="edit-qty" inputmode="decimal" placeholder="–">
+        </label>
+        <label class="field unit-field">
+          <span>Einheit</span>
+          <input type="text" id="edit-unit" list="unit-list" placeholder="–">
+          <datalist id="unit-list">
+            <option value="g"></option><option value="kg"></option>
+            <option value="ml"></option><option value="l"></option>
+            <option value="EL"></option><option value="TL"></option>
+            <option value="Stück"></option><option value="Bund"></option>
+            <option value="Packung"></option><option value="Dose"></option>
+            <option value="Glas"></option><option value="Flasche"></option>
+            <option value="Becher"></option><option value="Zehen"></option>
+          </datalist>
+        </label>
+      </div>
+      <label class="field">
+        <span>Name</span>
+        <input type="text" id="edit-name" required>
+      </label>
+      <label class="field">
+        <span>Kategorie</span>
+        <select id="edit-category"></select>
+      </label>
+      <div class="dialog-buttons">
+        <button type="button" id="edit-delete" class="btn-danger">Löschen</button>
+        <span class="spacer"></span>
+        <button type="button" id="edit-cancel" class="btn-plain">Abbrechen</button>
+        <button type="submit" id="edit-save" class="btn-primary">Speichern</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ===== Dialog: Zutaten auf den Zettel ===== -->
+  <dialog id="tolist-dialog">
+    <form method="dialog">
+      <h2>Auf den Einkaufszettel</h2>
+      <p class="dialog-text">Hake ab, was du <strong>schon zu Hause hast</strong> – der Rest wandert auf den Zettel.</p>
+      <div id="tolist-items" class="tolist-items"></div>
+      <div class="dialog-buttons">
+        <span class="spacer"></span>
+        <button type="button" id="tolist-cancel" class="btn-plain">Abbrechen</button>
+        <button type="submit" id="tolist-confirm" class="btn-primary">Auf den Zettel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ===== Dialog: Rezept löschen ===== -->
+  <dialog id="recipe-delete-dialog">
+    <form method="dialog">
+      <h2>Rezept löschen?</h2>
+      <p id="recipe-delete-info" class="dialog-text"></p>
+      <div class="dialog-buttons">
+        <span class="spacer"></span>
+        <button type="button" id="recipe-delete-cancel" class="btn-plain">Abbrechen</button>
+        <button type="submit" id="recipe-delete-confirm" class="btn-danger-solid">Löschen</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ===== Dialog: Aufräumen bestätigen ===== -->
+  <dialog id="clear-dialog">
+    <form method="dialog">
+      <h2>Gekauftes entfernen?</h2>
+      <p id="clear-info" class="dialog-text"></p>
+      <div class="dialog-buttons">
+        <span class="spacer"></span>
+        <button type="button" id="clear-cancel" class="btn-plain">Abbrechen</button>
+        <button type="submit" id="clear-confirm" class="btn-primary">Entfernen</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
