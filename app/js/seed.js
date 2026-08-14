@@ -69,7 +69,7 @@ Asafoetida (optional, kleine Prise im Dal)
 
 == SCHRITTE ==
 - T-240: Naan-Teig ansetzen und abgedeckt gehen lassen. (Timer: 90 min)
-- T-150: Kartoffeln und Blumenkohl schneiden, Kartoffeln in kaltes Wasser legen.
+- T-150: Kartoffeln und Blumenkohl schneiden, Kartoffeln in kaltes Wasser legen. (vorziehbar)
 - T-135: Naan-Teig in 4 Portionen teilen, rund schleifen, abgedeckt ruhen lassen.
 - T-90: Korma fertigstellen: Tofu anbraten, Gemüse in die Sauce, Tofu unterheben, warm halten.
 - T-60: Aloo Gobi kochen.

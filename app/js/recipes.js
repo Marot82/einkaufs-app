@@ -7,6 +7,7 @@ import { formatQty } from './parse.js';
 import { CATEGORIES, DEFAULT_CATEGORY } from './categories.js';
 import { addItem } from './shopping.js';
 import { SEED_RECIPE_TEXT } from './seed.js';
+import { openCookingSetup } from './cooking.js';
 
 let recipes = loadRecipes();
 let currentId = null;      // gerade geöffnetes Rezept
@@ -239,6 +240,14 @@ function renderDetail() {
   toListBtn.textContent = '🛒 Auf den Einkaufszettel';
   toListBtn.addEventListener('click', openToListDialog);
   actions.appendChild(toListBtn);
+
+  if (r.steps.length > 0 || r.prepSteps.length > 0) {
+    const cookBtn = document.createElement('button');
+    cookBtn.className = 'btn-plain';
+    cookBtn.textContent = '👨‍🍳 Jetzt kochen';
+    cookBtn.addEventListener('click', () => openCookingSetup(r.id));
+    actions.appendChild(cookBtn);
+  }
 
   const shareBtn = document.createElement('button');
   shareBtn.className = 'btn-plain';

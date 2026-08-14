@@ -2,6 +2,7 @@
 
 import './shopping.js';
 import './recipes.js';
+import './cooking.js';
 
 // ---- Untere Navigation ----
 const navButtons = document.querySelectorAll('.nav-btn');

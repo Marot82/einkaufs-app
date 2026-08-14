@@ -86,15 +86,68 @@
 
   <!-- ===== Ansicht: Kochen (Stufe 3) ===== -->
   <main id="view-cooking" class="view">
-    <header class="app-header">
-      <h1>Kochen</h1>
-    </header>
-    <div class="placeholder-card">
-      <div class="placeholder-emoji">👨‍🍳</div>
-      <h2>Kommt in Stufe 3</h2>
-      <p>Hier führt dich die App Schritt für Schritt durchs Kochen – mit Zeitplan
-      rückwärts gerechnet von der Essenszeit, Timern und Vortags-Schritten.</p>
-    </div>
+
+    <!-- Unteransicht: Rezept auswählen -->
+    <section id="cooking-home">
+      <header class="app-header">
+        <h1>Kochen</h1>
+      </header>
+      <p class="cooking-intro">Such dir ein Rezept aus – ich führe dich Schritt für Schritt durch.</p>
+      <div id="cooking-recipe-list" class="recipe-list"></div>
+      <p id="cooking-empty" class="empty-hint hidden">
+        Noch kein Rezept mit Kochschritten in der Bibliothek.<br>
+        Füge unter „Rezepte“ eins ein – am besten im App-Format mit Zeitangaben.
+      </p>
+    </section>
+
+    <!-- Unteransicht: Start-Setup -->
+    <section id="cooking-setup" class="hidden">
+      <header class="app-header">
+        <button class="header-btn" id="cooking-setup-back">‹ Zurück</button>
+        <h1>Loslegen</h1>
+      </header>
+      <div class="setup-area">
+        <h2 id="setup-recipe-name"></h2>
+        <p id="setup-meta" class="setup-meta"></p>
+
+        <div class="setup-card">
+          <h3>Mit Zeitplan kochen</h3>
+          <p class="setup-hint">Ich rechne von der Essenszeit rückwärts und sage dir, wann was dran ist.</p>
+          <label class="field">
+            <span>Wann wollt ihr essen?</span>
+            <input type="time" id="setup-mealtime">
+          </label>
+          <p id="setup-time-info" class="setup-time-info"></p>
+          <button id="setup-start-timed" class="btn-primary btn-block">Mit Zeitplan starten</button>
+        </div>
+
+        <div class="setup-card">
+          <h3>Ohne Zeitplan</h3>
+          <p class="setup-hint">Einfach Schritt für Schritt der Reihe nach, in deinem Tempo.</p>
+          <button id="setup-start-free" class="btn-plain btn-block">Der Reihe nach kochen</button>
+        </div>
+
+        <div class="setup-card" id="setup-prep-card">
+          <h3>Nur vorbereiten</h3>
+          <p class="setup-hint" id="setup-prep-hint">Die Vortags-Schritte schon heute abhaken – die App merkt sich das fürs Kochen morgen.</p>
+          <button id="setup-start-prep" class="btn-plain btn-block">Vortags-Schritte machen</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unteransicht: Laufende Koch-Session -->
+    <section id="cooking-active" class="hidden">
+      <header class="app-header">
+        <div>
+          <h1 id="cooking-title" class="cooking-title"></h1>
+          <div id="cooking-meal-info" class="cooking-meal-info"></div>
+        </div>
+        <button id="cooking-quit" class="header-btn btn-header-danger">Beenden</button>
+      </header>
+      <div id="cooking-timers" class="cooking-timers"></div>
+      <div id="cooking-content" class="cooking-content"></div>
+    </section>
+
   </main>
 
   <!-- ===== Untere Navigation ===== -->
@@ -174,6 +227,19 @@
         <span class="spacer"></span>
         <button type="button" id="recipe-delete-cancel" class="btn-plain">Abbrechen</button>
         <button type="submit" id="recipe-delete-confirm" class="btn-danger-solid">Löschen</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ===== Dialog: Kochen beenden ===== -->
+  <dialog id="cooking-quit-dialog">
+    <form method="dialog">
+      <h2>Kochen beenden?</h2>
+      <p id="cooking-quit-info" class="dialog-text"></p>
+      <div class="dialog-buttons">
+        <span class="spacer"></span>
+        <button type="button" id="cooking-quit-cancel" class="btn-plain">Weiterkochen</button>
+        <button type="submit" id="cooking-quit-confirm" class="btn-danger-solid">Beenden</button>
       </div>
     </form>
   </dialog>

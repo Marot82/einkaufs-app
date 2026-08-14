@@ -48,6 +48,44 @@ export function markSeeded() {
   save('seeded', true);
 }
 
+// ---- Koch-Session (Stufe 3) ----
+// { recipeId, mode: 'timed'|'free'|'prep', mealTime, done: {key: ts},
+//   timers: [{ key, label, min, endsAt }], startedAt }
+
+export function loadCookingSession() {
+  return load('cooking', null);
+}
+
+export function saveCookingSession(session) {
+  save('cooking', session);
+}
+
+export function clearCookingSession() {
+  localStorage.removeItem(PREFIX + 'cooking');
+}
+
+// Erledigte Vortags-Schritte, pro Rezept, überleben das Session-Ende.
+// { [recipeId]: { [stepKey]: timestamp } } – Einträge älter als 48 h verfallen.
+
+const PREP_MAX_AGE = 48 * 60 * 60 * 1000;
+
+export function loadPrepDone(recipeId) {
+  const all = load('prepDone', {});
+  const entry = all[recipeId] || {};
+  const now = Date.now();
+  const fresh = {};
+  for (const [key, ts] of Object.entries(entry)) {
+    if (now - ts < PREP_MAX_AGE) fresh[key] = ts;
+  }
+  return fresh;
+}
+
+export function savePrepDone(recipeId, doneMap) {
+  const all = load('prepDone', {});
+  all[recipeId] = doneMap;
+  save('prepDone', all);
+}
+
 // ---- Verlauf für Vorschläge ----
 // { "kartoffeln": { name, unit, category, lastQty, count, lastUsed } }
 

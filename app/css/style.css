@@ -562,3 +562,166 @@ dialog h2 { font-size: 1.15rem; margin-bottom: 16px; }
 
 .btn-back { margin-right: auto; }
 #recipe-import .app-header h1 { margin-right: auto; padding-left: 12px; }
+
+/* ===== Kochen (Stufe 3) ===== */
+.cooking-intro {
+  padding: 0 16px 14px;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+/* Setup */
+.setup-area { padding: 0 16px 32px; }
+.setup-area h2 { font-size: 1.3rem; margin-bottom: 4px; }
+.setup-meta { color: var(--accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 16px; }
+
+.setup-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.setup-card h3 { font-size: 1.02rem; margin-bottom: 6px; }
+.setup-hint { color: var(--text-dim); font-size: 0.88rem; line-height: 1.45; margin-bottom: 12px; }
+
+.setup-time-info {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.45;
+  margin: -4px 0 12px;
+}
+
+#setup-mealtime {
+  font-size: 1.2rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Kopf der laufenden Session */
+.cooking-title { font-size: 1.15rem; }
+.cooking-meal-info {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Timer-Leiste */
+.cooking-timers {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 0 16px;
+  background: var(--bg);
+}
+.timer-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  margin-bottom: 8px;
+}
+.timer-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.88rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.timer-time {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.05rem;
+  color: var(--accent);
+}
+.timer-close {
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+.timer-done {
+  background: rgba(224, 96, 82, 0.15);
+  border-color: var(--danger);
+  animation: timer-pulse 1s infinite;
+}
+.timer-done .timer-time { color: var(--danger); }
+@keyframes timer-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.65; }
+}
+
+/* Schrittliste */
+.cooking-content { padding: 4px 16px 32px; }
+
+.cooking-progress {
+  height: 6px;
+  background: var(--surface-2);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 8px 0 4px;
+}
+.cooking-progress-bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.cooking-group-title { margin-top: 22px; }
+.cooking-group-title.group-due { color: var(--accent); }
+.cooking-group-hint {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+  margin: -4px 0 8px;
+}
+
+.cooking-step { align-items: flex-start; }
+.cooking-step .item-check { margin-top: 2px; }
+.cooking-step-text { line-height: 1.45; }
+
+.step-due { border-left: 4px solid var(--accent); }
+
+.step-flex {
+  background: rgba(255, 166, 0, 0.15);
+  color: #a05c00;
+}
+@media (prefers-color-scheme: dark) {
+  .step-flex { color: #e8b563; }
+}
+
+.timer-btn {
+  flex: none;
+  align-self: center;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 7px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.timer-btn:active { background: var(--accent-soft); }
+
+.done-title { color: var(--text-dim); }
+.cooking-done-list { opacity: 0.75; }
+
+.cooking-notes { margin-top: 24px; }
+.cooking-notes summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 4px;
+  color: var(--text-dim);
+}
+.cooking-notes[open] summary { color: var(--text); }

@@ -67,6 +67,14 @@ function parseIngredientLine(line, category) {
   };
 }
 
+// "(vorziehbar)" markiert Schritte, die früher als geplant erledigt werden
+// können – die Kochansicht bietet sie dann jederzeit an.
+function extractFlexible(text) {
+  const m = text.match(/\s*\(\s*vorziehbar\s*\)/i);
+  if (!m) return { text, flexible: false };
+  return { text: text.replace(m[0], '').trim(), flexible: true };
+}
+
 // Schrittzeile: "- T-240: Naan-Teig ansetzen (Timer: 30 min)"
 function parseStepLine(line) {
   let text = line.trim().replace(/^[-•*]\s*/, '').replace(/^\d+[.)]\s*/, '');
@@ -85,9 +93,10 @@ function parseStepLine(line) {
     }
   }
 
-  const { text: cleanText, timerMin } = extractTimer(text);
+  const { text: flexText, flexible } = extractFlexible(text);
+  const { text: cleanText, timerMin } = extractTimer(flexText);
   if (!cleanText) return null;
-  return { offsetMin, text: cleanText, timerMin };
+  return { offsetMin, text: cleanText, timerMin, flexible };
 }
 
 // ---- Hauptparser ----
@@ -284,7 +293,8 @@ export function serializeRecipe(recipe) {
     lines.push('== SCHRITTE ==');
     for (const s of recipe.steps) {
       const prefix = s.offsetMin != null ? `T-${s.offsetMin}: ` : '';
-      lines.push(`- ${prefix}${s.text}`);
+      const flex = s.flexible ? ' (vorziehbar)' : '';
+      lines.push(`- ${prefix}${s.text}${flex}`);
     }
     lines.push('');
   }
