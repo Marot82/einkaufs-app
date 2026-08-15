@@ -90,7 +90,7 @@ Kardamom gemahlen (1 Prise fürs Korma – ersetzt Kasuri Methi)
 - T-150: Kartoffeln und Blumenkohl schneiden – jederzeit am Kochtag möglich, aber nicht am Vortag (Kartoffeln verfärben sich, Blumenkohl wird streng). (vorziehbar)
   * 250 g Kartoffeln schälen, in 2-cm-Würfel schneiden, in kaltes Wasser legen.
   * 250 g Blumenkohl in kleine Röschen teilen.
-- T-135: Naan-Teig in 4 Portionen teilen, rund schleifen, abgedeckt ruhen lassen.
+- T-135: Naan-Teig in 4 Kugeln (je ca. 110 g) teilen, rund schleifen, abgedeckt ruhen lassen. Gebacken werden heute nur 2–3 – die restlichen Kugeln geölt und abgedeckt in den Kühlschrank, sie halten 2 Tage.
 - T-90: Korma fertigstellen und warm halten.
   * 150 g Tofu trockentupfen, würfeln, in 2 EL Öl von allen Seiten goldbraun braten. Beiseite stellen.
   * Sauce erwärmen. Blanchierte Karotten und Bohnen, rohe Paprikawürfel und 80 g Erbsen dazu, 8 min köcheln. (Timer: 8 min)
@@ -117,7 +117,7 @@ Kardamom gemahlen (1 Prise fürs Korma – ersetzt Kasuri Methi)
   * Tadka: 3 EL Öl richtig heiß. 1 TL ganzen Kreuzkümmel hinein (muss sofort aufplatzen), nach 20 Sek 2 fein geschnittene Knoblauchzehen goldbraun braten. Pfanne vom Herd, 1/2 TL Paprikapulver nur in der Restwärme einrühren. Heiß über den Dal gießen, nicht ganz unterrühren.
   * Kachumber mit Limettensaft, Salz und Koriander anmachen.
   * Reis-Tempering: 3 EL Öl, 1 TL Senfkörner (müssen springen), dann 1 TL Kreuzkümmel und 2 EL geröstete Cashews. Herd aus, 1/2 TL Kurkuma, sofort über den Reis. Saft von 1 Zitrone unterheben.
-  * Naan: Fladen 5 mm dick ausrollen, nicht dünner. Gusseisenpfanne ohne Öl maximal vorheizen. 1,5 min mit Deckel, wenden, 1 min offen. Mit Knoblauchöl bestreichen, im Tuch stapeln. Nur 2–3 backen.
+  * Naan: Fladen länglich ausrollen, ca. handtellergroß und 5 mm dick – nicht dünner, die Dicke macht die Blasen. Gusseisenpfanne ohne Öl maximal vorheizen (5 min, Wassertropfen muss tanzen). Pro Naan: 1,5 min mit Deckel, wenden, 1 min offen. Mit Knoblauchöl bestreichen, im Tuch stapeln – dort bleiben sie 15–20 min weich. Nur 2–3 backen.
   * Alles anrichten: Reis in die Mitte, Gerichte in Schälchen drumherum, großzügig Koriander. Guten Appetit!
 
 == NOTIZEN ==
