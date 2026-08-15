@@ -19,7 +19,7 @@ let pendingRecipe = null;  // geparstes, noch nicht gespeichertes Rezept
 // Kopie durch die neue Fassung ersetzt (gleiche id, damit z. B. erledigte
 // Vortags-Schritte erhalten bleiben). Hat der Nutzer das Rezept gelöscht,
 // bleibt es gelöscht.
-const SEED_VERSION = 6;
+const SEED_VERSION = 7;
 if (seededVersion() < SEED_VERSION) {
   const { recipe } = parseRecipeText(SEED_RECIPE_TEXT);
   if (recipe) {

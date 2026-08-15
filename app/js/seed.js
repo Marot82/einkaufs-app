@@ -72,7 +72,7 @@ Kardamom gemahlen (1 Prise fürs Korma – ersetzt Kasuri Methi)
   * 1 TL Koriander gemahlen, 1/2 TL Kurkuma, 1/2 TL Kreuzkümmel gemahlen und 1/2 TL Garam Masala kurz mitrösten.
   * 1 gehackte Tomate dazu, weichkochen.
   * Cashewpaste und 200 ml Wasser einrühren, 10 min leise köcheln. Mit 1 TL Zucker und Salz abschmecken. Abkühlen, Kühlschrank. (Timer: 10 min)
-- Cashews für den Reis in trockener Pfanne goldbraun rösten, auskühlen lassen, luftdicht aufbewahren.
+- Ca. 50 g Cashews (4–5 EL) in trockener Pfanne goldbraun rösten, auskühlen lassen, luftdicht aufbewahren – 2 EL fürs Reis-Tempering, der Rest als Korma-Topping.
 - Korma-Gemüse vorbereiten.
   * 2 Karotten schälen und in ca. 1 cm dicke Scheiben schneiden. 80 g grüne Bohnen putzen (Enden ab) und in 3-cm-Stücke schneiden.
   * Karotten und Bohnen 3 min in kochendem Salzwasser blanchieren, kalt abschrecken, abtropfen lassen, in den Kühlschrank. (Timer: 3 min)
@@ -94,7 +94,7 @@ Kardamom gemahlen (1 Prise fürs Korma – ersetzt Kasuri Methi)
 - T-90: Korma fertigstellen und warm halten.
   * 150 g Tofu trockentupfen, würfeln, in 2 EL Öl von allen Seiten goldbraun braten. Beiseite stellen.
   * Sauce erwärmen. Blanchierte Karotten und Bohnen, rohe Paprikawürfel und 80 g Erbsen dazu, 8 min köcheln. (Timer: 8 min)
-  * Tofu unterheben, eine Handvoll grob gehackte geröstete Cashews darüberstreuen.
+  * Tofu unterheben, 2–3 EL grob gehackte geröstete Cashews darüberstreuen.
   * Je 1 Prise Zimt und Kardamom einrühren – das macht das Korma süß-warm.
   * Herd aus, erst dann 2 EL Joghurt einrühren (sonst flockt er). Warm halten.
 - T-60: Aloo Gobi kochen.
@@ -104,7 +104,7 @@ Kardamom gemahlen (1 Prise fürs Korma – ersetzt Kasuri Methi)
   * 1/2 TL Kurkuma, 1 TL Koriander gemahlen, 1/2 TL Kreuzkümmel gemahlen und Salz dazu, gut durchschwenken.
   * 1 gehackte Tomate dazu, Deckel drauf, Hitze runter, 10–12 min garen. Kein Wasser – die Tomate reicht. (Timer: 11 min)
   * Deckel ab, 1/2 TL Garam Masala einstreuen. Herd aus, 2 TL Zitronensaft unterheben, frischen Koriander drüber.
-- T-40: Reis waschen und einweichen. (Timer: 30 min)
+- T-40: 120 g Basmatireis waschen, bis das Wasser klar bleibt, dann 30 min einweichen. (Timer: 30 min)
 - T-30: Raita anmachen, Kachumber vorschneiden.
   * Raita: 1/2 Gurke grob raspeln, salzen, 10 min stehen lassen, dann kräftig ausdrücken. (Timer: 10 min)
   * Gurke in 200 g glattgerührten Joghurt geben. 1/2 TL Kreuzkümmel trocken rösten, grob zerstoßen, einrühren. Minze, Salz, Spritzer Zitrone. Kalt stellen.
