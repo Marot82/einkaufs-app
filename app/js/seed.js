@@ -74,9 +74,9 @@ Kardamom gemahlen (1 Prise fürs Korma – ersetzt Kasuri Methi)
   * Cashewpaste und 200 ml Wasser einrühren, 10 min leise köcheln. Mit 1 TL Zucker und Salz abschmecken. Abkühlen, Kühlschrank. (Timer: 10 min)
 - Cashews für den Reis in trockener Pfanne goldbraun rösten, auskühlen lassen, luftdicht aufbewahren.
 - Korma-Gemüse vorbereiten.
-  * Karotten und Bohnen in Stücke schneiden.
-  * 3 min blanchieren, kalt abschrecken, im Kühlschrank lagern. (Timer: 3 min)
-  * Paprika roh in Würfel schneiden.
+  * 2 Karotten schälen und in ca. 1 cm dicke Scheiben schneiden. 80 g grüne Bohnen putzen (Enden ab) und in 3-cm-Stücke schneiden.
+  * Karotten und Bohnen 3 min in kochendem Salzwasser blanchieren, kalt abschrecken, abtropfen lassen, in den Kühlschrank. (Timer: 3 min)
+  * 1 rote Paprika entkernen und roh in ca. 1,5-cm-Würfel schneiden, ebenfalls kühl stellen. Die 80 g Erbsen (TK) heute nicht anfassen – sie kommen morgen gefroren direkt in die Sauce.
 - Gewürzschälchen vorportionieren: für jedes Gericht ein Schälchen mit abgemessenen Gewürzen. Beim Kochen bleibt keine Zeit zum Abmessen.
 - Minze zupfen, Koriander waschen, in feuchtem Küchenpapier in den Kühlschrank.
 - NICHT am Vortag: Raita/Kachumber schneiden, Kartoffeln/Blumenkohl schneiden, Naan-Teig ansetzen, Reis waschen.
