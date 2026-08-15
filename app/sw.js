@@ -2,7 +2,7 @@
 // Strategie "stale-while-revalidate": erst aus dem Cache antworten (schnell,
 // geht auch ohne Netz), im Hintergrund frische Version nachladen.
 
-const CACHE = 'eka-v6';
+const CACHE = 'eka-v8';
 
 const SHELL = [
   './',
@@ -24,7 +24,11 @@ const SHELL = [
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE).then((cache) => cache.addAll(SHELL)).then(() => self.skipWaiting())
+    caches.open(CACHE)
+      // "reload" umgeht den HTTP-Cache des Browsers – sonst können beim
+      // Installieren veraltete Kopien in den App-Cache wandern.
+      .then((cache) => cache.addAll(SHELL.map((url) => new Request(url, { cache: 'reload' }))))
+      .then(() => self.skipWaiting())
   );
 });
 
@@ -40,7 +44,9 @@ self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
   event.respondWith(
     caches.match(event.request).then((cached) => {
-      const fresh = fetch(event.request)
+      // "no-cache" erzwingt eine Rückfrage beim Server statt einer evtl.
+      // veralteten Antwort aus dem HTTP-Cache des Browsers.
+      const fresh = fetch(event.request, { cache: 'no-cache' })
         .then((response) => {
           if (response.ok) {
             const copy = response.clone();

@@ -82,12 +82,12 @@ Kardamom gemahlen (1 Prise fürs Korma – ersetzt Kasuri Methi)
 - NICHT am Vortag: Raita/Kachumber schneiden, Kartoffeln/Blumenkohl schneiden, Naan-Teig ansetzen, Reis waschen.
 
 == SCHRITTE ==
-- T-240: Naan-Teig ansetzen und abgedeckt gehen lassen.
+- T-240: Naan-Teig ansetzen und abgedeckt gehen lassen. Zeitfenster: frühestens 5, spätestens 2,5 Std vor dem Essen – NICHT am Vortag, der Teig wird sauer. (Notfall ohne Gehzeit: Backpulver-Variante, siehe Notizen.)
   * 1 TL Trockenhefe und 1 TL Zucker in 60 ml lauwarmem Wasser auflösen, 10 min schäumen lassen. (Timer: 10 min)
   * 250 g Mehl Typ 550 und 3/4 TL Salz mischen. 120 g veganen Joghurt, 2 EL Öl und die Hefemischung dazu.
   * 8 min kräftig kneten – der Teig soll weicher und klebriger sein als Pizzateig. Löffelweise Wasser nachgeben, wenn er zu fest wirkt.
   * Abgedeckt 1,5 Std gehen lassen, bis er sich verdoppelt hat. (Timer: 90 min)
-- T-150: Kartoffeln und Blumenkohl schneiden. (vorziehbar)
+- T-150: Kartoffeln und Blumenkohl schneiden – jederzeit am Kochtag möglich, aber nicht am Vortag (Kartoffeln verfärben sich, Blumenkohl wird streng). (vorziehbar)
   * 250 g Kartoffeln schälen, in 2-cm-Würfel schneiden, in kaltes Wasser legen.
   * 250 g Blumenkohl in kleine Röschen teilen.
 - T-135: Naan-Teig in 4 Portionen teilen, rund schleifen, abgedeckt ruhen lassen.
@@ -104,8 +104,8 @@ Kardamom gemahlen (1 Prise fürs Korma – ersetzt Kasuri Methi)
   * 1/2 TL Kurkuma, 1 TL Koriander gemahlen, 1/2 TL Kreuzkümmel gemahlen und Salz dazu, gut durchschwenken.
   * 1 gehackte Tomate dazu, Deckel drauf, Hitze runter, 10–12 min garen. Kein Wasser – die Tomate reicht. (Timer: 11 min)
   * Deckel ab, 1/2 TL Garam Masala einstreuen. Herd aus, 2 TL Zitronensaft unterheben, frischen Koriander drüber.
-- T-40: 120 g Basmatireis waschen, bis das Wasser klar bleibt, dann 30 min einweichen. (Timer: 30 min)
-- T-30: Raita anmachen, Kachumber vorschneiden.
+- T-40: 120 g Basmatireis waschen, bis das Wasser klar bleibt, dann 30 min einweichen – nicht früher ansetzen, er soll erst kurz vorm Kochen ins Wasser. (Timer: 30 min)
+- T-30: Raita anmachen, Kachumber vorschneiden. Das Raita darf auch ein paar Stunden früher fertig sein (kalt stellen); der Kachumber wird erst 15 min vor dem Essen angemacht.
   * Raita: 1/2 Gurke grob raspeln, salzen, 10 min stehen lassen, dann kräftig ausdrücken. (Timer: 10 min)
   * Gurke in 200 g glattgerührten Joghurt geben. 1/2 TL Kreuzkümmel trocken rösten, grob zerstoßen, einrühren. Minze, Salz, Spritzer Zitrone. Kalt stellen.
   * Kachumber: 1 Tomate, 1/2 Gurke und 1/2 rote Zwiebel in kleine, gleichmäßige Würfel schneiden. Noch NICHT anmachen.
@@ -121,6 +121,8 @@ Kardamom gemahlen (1 Prise fürs Korma – ersetzt Kasuri Methi)
   * Alles anrichten: Reis in die Mitte, Gerichte in Schälchen drumherum, großzügig Koriander. Guten Appetit!
 
 == NOTIZEN ==
+WENN SICH DAS ESSEN VERSCHIEBT: Dal, Korma und Aloo Gobi halten problemlos eine Stunde warm. Der Reis nicht (wird pappig), die Naan schon gar nicht – die beiden immer als Letztes machen. Wenn du dich im Endspurt entscheiden musst: Naan warten lassen, alles andere kann stehen.
+
 GARAM MASALA OHNE PFEFFER (selbst mischen): 1 TL Kreuzkümmel gem., 1 TL Koriander gem., 1/2 TL Zimt, 1/2 TL Kardamom gem., optional je 1 Prise Nelken/Muskat. Verrühren, luftdicht aufbewahren, 1:1 wie gekauftes verwenden. Wichtig fürs Korma: Die dort vorgesehene Extra-Prise Zimt + Kardamom dann weglassen oder halbieren, die steckt schon in der Mischung.
 
 DAL TADKA: Aufwärmen, mit Wasser flüssig einstellen. Tadka: 3 EL Öl richtig heiß, 1 TL ganzer Kreuzkümmel (muss aufplatzen), nach 20 Sek. 2 geschnittene Knoblauchzehen goldbraun, Pfanne vom Herd, 1/2 TL Paprikapulver nur in der Restwärme. Heiß über den Dal, nicht ganz unterrühren. Koriander drüber.

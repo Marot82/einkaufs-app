@@ -17,10 +17,11 @@ import {
 } from './storage.js';
 
 let session = loadCookingSession();
-// Ältere Sessions kennen die Felder für Unterschritte noch nicht.
+// Ältere Sessions kennen die neueren Felder noch nicht.
 if (session) {
   session.subDone = session.subDone || {};
   session.openStep = session.openStep || null;
+  session.view = session.view || 'guide';
 }
 let tickHandle = null;
 let lastRenderMinute = null;
@@ -50,6 +51,18 @@ const contentEl = document.getElementById('cooking-content');
 
 const quitDialog = document.getElementById('cooking-quit-dialog');
 const quitInfo = document.getElementById('cooking-quit-info');
+
+const toggleGuideBtn = document.getElementById('cooking-toggle-guide');
+const togglePlanBtn = document.getElementById('cooking-toggle-plan');
+
+function setView(view) {
+  if (!session) return;
+  session.view = view;
+  saveCookingSession(session);
+  renderActive();
+}
+toggleGuideBtn.addEventListener('click', () => setView('guide'));
+togglePlanBtn.addEventListener('click', () => setView('plan'));
 
 let setupRecipeId = null;
 
@@ -252,6 +265,7 @@ function startSession(mode) {
     done,
     subDone: {},
     openStep: null,
+    view: 'guide',
     timers: [],
     startedAt: Date.now(),
   };
@@ -533,7 +547,25 @@ function renderActive() {
 
   renderTimers();
 
+  toggleGuideBtn.classList.toggle('active', session.view !== 'plan');
+  togglePlanBtn.classList.toggle('active', session.view === 'plan');
+
   contentEl.innerHTML = '';
+
+  // Menü / Info des Rezepts immer oben sichtbar
+  if (r.info) {
+    const info = document.createElement('div');
+    info.className = 'cooking-info';
+    info.textContent = r.info;
+    contentEl.appendChild(info);
+  }
+
+  if (session.view === 'plan') {
+    renderPlanView(r);
+    appendNotes(r);
+    return;
+  }
+
   const groups = computeGroups(r);
 
   const allSteps = session.mode === 'prep' ? r.prepSteps : r.steps;
@@ -620,17 +652,74 @@ function renderActive() {
     contentEl.appendChild(box);
   }
 
-  // Notizen als Nachschlagewerk
-  if (r.notes) {
-    const details = document.createElement('details');
-    details.className = 'cooking-notes';
-    const summary = document.createElement('summary');
-    summary.textContent = 'Detail-Rezepte & Notizen';
-    const pre = document.createElement('div');
-    pre.className = 'detail-notes';
-    pre.textContent = r.notes;
-    details.append(summary, pre);
-    contentEl.appendChild(details);
+  appendNotes(r);
+}
+
+// Notizen als Nachschlagewerk
+function appendNotes(r) {
+  if (!r.notes) return;
+  const details = document.createElement('details');
+  details.className = 'cooking-notes';
+  const summary = document.createElement('summary');
+  summary.textContent = 'Detail-Rezepte & Notizen';
+  const pre = document.createElement('div');
+  pre.className = 'detail-notes';
+  pre.textContent = r.notes;
+  details.append(summary, pre);
+  contentEl.appendChild(details);
+}
+
+// Übersicht: beide Tage komplett, in Rezept-Reihenfolge, mit Häkchen-Stand.
+// Von hier aus kann man genauso abhaken und aufklappen wie in der Führung.
+function renderPlanView(r) {
+  const now = Date.now();
+
+  if (r.prepSteps.length > 0) {
+    const head = document.createElement('h3');
+    head.className = 'detail-section-title cooking-group-title';
+    head.textContent = 'Vortag';
+    contentEl.appendChild(head);
+
+    const hint = document.createElement('p');
+    hint.className = 'cooking-group-hint';
+    hint.textContent = 'Gern schon am Tag vorher – Häkchen bleiben auch nach Session-Ende gespeichert.';
+    contentEl.appendChild(hint);
+
+    const box = document.createElement('div');
+    box.className = 'category-items';
+    r.prepSteps.forEach((s, i) => {
+      const key = 'p' + i;
+      box.appendChild(renderStepRow({
+        key, step: s, planned: null,
+        status: session.done[key] ? 'done' : 'flex',
+      }));
+    });
+    contentEl.appendChild(box);
+  }
+
+  if (r.steps.length > 0) {
+    const head = document.createElement('h3');
+    head.className = 'detail-section-title cooking-group-title';
+    head.textContent = 'Am Kochtag';
+    contentEl.appendChild(head);
+
+    const box = document.createElement('div');
+    box.className = 'category-items';
+    r.steps.forEach((s, i) => {
+      const key = 's' + i;
+      const entry = { key, step: s, planned: null, status: 'later' };
+      if (session.done[key]) {
+        entry.status = 'done';
+      } else if (session.mode === 'timed' && session.mealTime && s.offsetMin != null) {
+        entry.planned = session.mealTime - s.offsetMin * 60000;
+        if (entry.planned <= now) entry.status = 'due';
+      }
+      if (entry.planned == null && entry.status !== 'done' && s.offsetMin != null) {
+        entry.offsetLabel = s.offsetMin === 0 ? 'zur Essenszeit' : `${fmtDuration(s.offsetMin)} vorher`;
+      }
+      box.appendChild(renderStepRow(entry));
+    });
+    contentEl.appendChild(box);
   }
 }
 
@@ -687,6 +776,13 @@ function renderStepRow(entry) {
       const inMin = Math.max(1, Math.round((entry.planned - now) / 60000));
       badge.textContent = `${fmtClock(entry.planned)} · in ${fmtDuration(inMin)}`;
     }
+    badges.appendChild(badge);
+    hasBadge = true;
+  }
+  if (entry.offsetLabel) {
+    const badge = document.createElement('span');
+    badge.className = 'step-time';
+    badge.textContent = entry.offsetLabel;
     badges.appendChild(badge);
     hasBadge = true;
   }
